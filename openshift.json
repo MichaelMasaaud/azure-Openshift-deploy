@@ -1,0 +1,99 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"_artifactsLocation": {
+			"value": "https://raw.githubusercontent.com/Microsoft/openshift-container-platform/master"
+		},
+		"masterVmSize": {
+			"value": "Standard_DS2_v2"
+		},
+		"infraVmSize": {
+			"value": "Standard_DS2_v2"
+		},
+		"nodeVmSize": {
+			"value": "Standard_DS2_v2"
+		},
+		"cnsVmSize": {
+			"value": "Standard_DS4_v2"
+		},
+		"storageKind": {
+			"value": "managed"
+		},
+		"openshiftClusterPrefix": {
+			"value": "xvos"
+		},
+		"masterInstanceCount": {
+			"value": 1
+		},
+		"infraInstanceCount": {
+			"value": 1
+		},
+		"nodeInstanceCount": {
+			"value": 2
+		},
+		"dataDiskSize": {
+			"value": 128
+		},
+		"adminUsername": {
+			"value": "xvocpadmin"
+		},
+		"openshiftPassword": {
+			"value": "xv12345!"
+		},
+		"enableMetrics": {
+			"value": "false"
+		},
+		"enableLogging": {
+			"value": "false"
+		},
+		"enableCNS": {
+			"value": "false"
+		},
+		"rhsmUsernameOrOrgId": {
+			"value": "<PUT YOUR OWN STUFF HERE>"
+		},
+		"rhsmPasswordOrActivationKey": {
+			"value": "<PUT YOUR OWN STUFF HERE>"
+		},
+		"rhsmPoolId": {
+			"value": "8a85f98c63842fef01641ed73b8f00ba"
+		},
+		"sshPublicKey": {
+			"value": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC2aCcr4h/EU7FsktoEele+NKOxYJ2tOz15ZZ7urqQXE76Islg7xkn9g6AZUzPb/QFgaySetmUfqUAnNXpBx/0P6ItBZW2jlDkTtEjKesfmquV2sczkEvORi4m6xnAJYX8Udkogq0YvbF0kDVUIDYLNzRXhE6iLrSuJL2lSaquBVyGw0znmmVZps92jiCAInG22LVVzPBJI/umqijMXSjp3CuUv6G3n8X27xVx+c1PYGCGi3OMqN4WQTbcx/8lnkL0HtBwxDZ13cuD44G5BYr0P7whXyZUm6YllWZucJhmNiqfh8N6MFGR7S+jFODzXqqi2bPVC9tzN6r9HdPHM/xcv bkugler@codeninja"
+		},
+		"keyVaultResourceGroup": {
+			"value": "xvosvaultrg"
+		},
+		"keyVaultName": {
+			"value": "xvosvault"
+		},
+		"keyVaultSecret": {
+			"value": "xvossecret"
+		},
+		"enableAzure": {
+			"value": "true"
+		},
+		"aadClientId": {
+			"value": "b559e7f0-4b83-4496-aa9d-dbd2433fc71b"
+		},
+		"aadClientSecret": {
+			"value": "xvale.123!"
+		},
+		"defaultSubDomainType": {
+			"value": "nipio"
+		},
+		"defaultSubDomain": {
+			"value": "xvos"
+		},
+		"addressPrefix": {
+			"value": "10.0.0.0/14"
+		},
+		"masterSubnetPrefix": {
+			"value": "10.1.0.0/16"
+		},
+		"nodeSubnetPrefix": {
+			"value": "10.2.0.0/16"
+		}
+	}
+}

@@ -7,8 +7,8 @@
   - name: Create virtual network
     azure_rm_virtualnetwork:
        resource_group: ResourceGroupName
-        name: testvn001
-        address_prefixes: "10.10.0.0/16"
+       name: testvn001
+       address_prefixes: "10.10.0.0/16"
     
   - name: Add subnet
     azure_rm_subnet:

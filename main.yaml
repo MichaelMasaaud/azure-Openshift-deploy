@@ -8,5 +8,5 @@
   - name: Create storage account
     azure_rm_storageaccount:
           resource_group: ResourceGroupName
-          name: testaccount001
+          name: mike123
           account_type: Standard_LRS

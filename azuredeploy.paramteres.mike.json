@@ -24,13 +24,13 @@
 			"value": "xvos"
 		},
 		"masterInstanceCount": {
-			"value": 1
+			"value": "{{num_master}}"
 		},
 		"infraInstanceCount": {
-			"value": 1
+			"value": "{{num_infra}}"
 		},
 		"nodeInstanceCount": {
-			"value": 2
+			"value": "{{num_worker}}"
 		},
 		"dataDiskSize": {
 			"value": 128

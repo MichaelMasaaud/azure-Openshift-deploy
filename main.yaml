@@ -3,4 +3,8 @@
   become: yes
   connection: local
   tasks:
-  - name: 
+  - name: Create storage account
+    azure_rm_storageaccount:
+       resource_group: Testing
+       name: testaccount001
+       account_type: Standard_LRS

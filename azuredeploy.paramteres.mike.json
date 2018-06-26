@@ -1,0 +1,145 @@
+
+Conversation opened. 1 read message.
+
+Skip to content
+Using Crossvale, Inc. Mail with screen readers
+Click here to enable desktop notifications for Crossvale, Inc. Mail.   Learn more  Hide
+
+7 of 267
+ 
+Azure OpenShift Deployments 
+Inbox
+x 
+
+Brett Kugler
+Attachments3:07 PM (22 hours ago)
+to me, Steven, Jose 
+https://github.com/Microsoft/openshift-container-platform/
+
+Follow along with the instructions carefully.  I included the azuredeploy.json which is the actual template - YOU DON'T CHANGE THIS - but it's required to run the provisioning command.
+
+Also, stumbled upon an example this morning where they pass all the parameter data on the CLI - not very practical, but I thought it was interesting.
+
+https://github.com/Microsoft/openshift-container-platform/issues/111
+
+Regards,
+Brett Kugler
+Senior Red Hat Consultant
+Crossvale, Inc
+(214) 794-8965
+
+https://plus.google.com/b/116289775449679641388/1162  89775449679641388/posts
+
+
+3 Attachments
+	
+Click here to Reply, Reply to all, or Forward
+0.04 GB (0%) of 30 GB used
+Manage
+Program Policies
+Powered by Google
+Last account activity: 2 minutes ago
+Details
+
+
+﻿{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"_artifactsLocation": {
+			"value": "https://raw.githubusercontent.com/Microsoft/openshift-container-platform/master"
+		},
+		"masterVmSize": {
+			"value": "Standard_DS2_v2"
+		},
+		"infraVmSize": {
+			"value": "Standard_DS2_v2"
+		},
+		"nodeVmSize": {
+			"value": "Standard_DS2_v2"
+		},
+		"cnsVmSize": {
+			"value": "Standard_DS4_v2"
+		},
+		"storageKind": {
+			"value": "managed"
+		},
+		"openshiftClusterPrefix": {
+			"value": "xvos"
+		},
+		"masterInstanceCount": {
+			"value": 1
+		},
+		"infraInstanceCount": {
+			"value": 1
+		},
+		"nodeInstanceCount": {
+			"value": 2
+		},
+		"dataDiskSize": {
+			"value": 128
+		},
+		"adminUsername": {
+			"value": "xvocpadmin"
+		},
+		"openshiftPassword": {
+			"value": "xv12345!"
+		},
+		"enableMetrics": {
+			"value": "false"
+		},
+		"enableLogging": {
+			"value": "false"
+		},
+		"enableCNS": {
+			"value": "false"
+		},
+		"rhsmUsernameOrOrgId": {
+			"value": "<PUT YOUR OWN STUFF HERE>"
+		},
+		"rhsmPasswordOrActivationKey": {
+			"value": "<PUT YOUR OWN STUFF HERE>"
+		},
+		"rhsmPoolId": {
+			"value": "8a85f98c63842fef01641ed73b8f00ba"
+		},
+		"sshPublicKey": {
+			"value": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC2aCcr4h/EU7FsktoEele+NKOxYJ2tOz15ZZ7urqQXE76Islg7xkn9g6AZUzPb/QFgaySetmUfqUAnNXpBx/0P6ItBZW2jlDkTtEjKesfmquV2sczkEvORi4m6xnAJYX8Udkogq0YvbF0kDVUIDYLNzRXhE6iLrSuJL2lSaquBVyGw0znmmVZps92jiCAInG22LVVzPBJI/umqijMXSjp3CuUv6G3n8X27xVx+c1PYGCGi3OMqN4WQTbcx/8lnkL0HtBwxDZ13cuD44G5BYr0P7whXyZUm6YllWZucJhmNiqfh8N6MFGR7S+jFODzXqqi2bPVC9tzN6r9HdPHM/xcv bkugler@codeninja"
+		},
+		"keyVaultResourceGroup": {
+			"value": "xvosvaultrg"
+		},
+		"keyVaultName": {
+			"value": "xvosvault"
+		},
+		"keyVaultSecret": {
+			"value": "xvossecret"
+		},
+		"enableAzure": {
+			"value": "true"
+		},
+		"aadClientId": {
+			"value": "b559e7f0-4b83-4496-aa9d-dbd2433fc71b"
+		},
+		"aadClientSecret": {
+			"value": "xvale.123!"
+		},
+		"defaultSubDomainType": {
+			"value": "nipio"
+		},
+		"defaultSubDomain": {
+			"value": "xvos"
+		},
+		"addressPrefix": {
+			"value": "10.0.0.0/14"
+		},
+		"masterSubnetPrefix": {
+			"value": "10.1.0.0/16"
+		},
+		"nodeSubnetPrefix": {
+			"value": "10.2.0.0/16"
+		}
+	}
+}
+azuredeploy.parameters.json
+Displaying history.txt.

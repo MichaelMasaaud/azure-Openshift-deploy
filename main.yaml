@@ -13,9 +13,9 @@
         
   - name: Create a secret
     azure_rm_keyvaultsecret:
-          vault_name: keyvault1
-          secret_name: !QAZxsw2
-          profile: ~/.ssh/id_rsa
+          vault_name: "keyvault1"
+          secret_name: "!QAZxsw2"
+          profile: "~/.ssh/id_rsa"
         
   - name: Create storage account
     azure_rm_storageaccount:

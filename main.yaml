@@ -13,9 +13,9 @@
   - name: Add subnet
     azure_rm_subnet:
      resource_group: ResourceGroupName
-      name: subnet001
-      address_prefix: "10.10.0.0/24"
-      virtual_network: testvn001
+     name: subnet001
+     address_prefix: "10.10.0.0/24"
+     virtual_network: testvn001
 
   - name: Create public ip
     azure_rm_publicipaddress:

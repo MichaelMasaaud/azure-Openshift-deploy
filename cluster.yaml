@@ -11,7 +11,7 @@
   - name: git hub download
     git:
       repo: 'https://github.com/Michaelsliem/azure-Openshift-deploy.git'
-      dest: /tmp/
+      dest: /tmp/azure-Openshift-deploy/
   
   - name: Reading Variables
     template:

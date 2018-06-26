@@ -12,7 +12,7 @@
           name: testVM
           vm_size: Standard_D1
           admin_username: chouseknecht
-          ssh_password: yes
+          ssh_password_enabled: yes
           image:
               offer: CentOS
               publisher: OpenLogic

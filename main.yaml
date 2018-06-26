@@ -6,12 +6,11 @@
   tasks:
   - name: Create a VitualMachine
     azure_rm_virtualmachine:
-          admin_username: "admin"
-          admin_password: "Xvale123"
+          admin_username: "mike1"
+          admin_password: "crossvale@123"
           resource_group: ResourceGroupName
           name: testVM
           vm_size: Standard_D1
-          admin_username: chouseknecht
           ssh_password_enabled: yes
           image:
               offer: CentOS

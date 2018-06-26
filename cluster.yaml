@@ -1,15 +1,25 @@
 ---
 - hosts: localhost
   gather_facts: False
+  
+  vars:
+    num_master: 2
+    num_infra: 3
+    num_worker: 3
  
   tasks:
   - name: git hub download
     git:
       repo: 'https://github.com/Michaelsliem/azure-Openshift-deploy.git'
       dest: /tmp/
+  
+  - name: Reading Variables
+    template:
+        src: /tmp/azure-Openshift-deploy/azuredeploy.paramteres.mike.json
+        dest: /tmp/azure-Openshift-deploy/azuredeploy.paramteres.mike1.json
     
   - name: Create Openshift Deployment
     shell: |
        cd /tmp/azure-Openshift-deploy/
-       az group deployment create --name ocpdeployment --template-file azuredeploy.mike.json --parameters azuredeploy.paramteres.mike.json --resource-group ResourceGroupName
+       az group deployment create --name ocpdeployment --template-file azuredeploy.mike.json --parameters azuredeploy.paramteres.mike1.json --resource-group ResourceGroupName
           

@@ -1,6 +1,7 @@
 ---
 - hosts: localhost
   gather_facts: False
+  become: yes
   
   vars:
     num_master: 2

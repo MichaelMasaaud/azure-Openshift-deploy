@@ -22,5 +22,6 @@
   - name: Create Openshift Deployment
     shell: |
        cd /tmp/azure-Openshift-deploy/
+       az login
        az group deployment create --name ocpdeployment --template-file azuredeploy.mike.json --parameters azuredeploy.paramteres.mike1.json --resource-group ResourceGroupName
           

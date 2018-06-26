@@ -5,7 +5,7 @@
   vars:
     num_master: 2
     num_infra: 3
-    num_worker: 3
+    num_worker: 2
  
   tasks:
   - name: git hub download

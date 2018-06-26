@@ -1,16 +1,15 @@
 ---
 - hosts: localhost
   gather_facts: False
-  connection: local
-  
+ 
   tasks:
-
+  - name: git hub download
+    git:
+      repo: 'https://github.com/Michaelsliem/azure-Openshift-deploy.git'
+      dest: /tmp/
+    
   - name: Create Openshift Deployment
-    azure_rm_deployment:
-          deployment_name: openshift-cluster-deployment
-          deployment_mode: complete
-          resource_group_name: ResourceGroupName
-          parameters: azuredeploy.paramteres.mike.json
-          template: azuredeploy.mike.json
-          wait_for_deployment_completion: no
+    shell: |
+       cd /tmp/azure-Openshift-deploy/
+       az group deployment create --name ocpdeployment --template-file azuredeploy.mike.json --parameters azuredeploy.paramteres.mike.json --resource-group ResourceGroupName
           

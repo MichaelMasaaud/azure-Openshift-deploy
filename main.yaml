@@ -4,6 +4,46 @@
   connection: local
   
   tasks:
+  - name: Create virtual network
+    azure_rm_virtualnetwork:
+       resource_group: ResourceGroupName
+        name: testvn001
+        address_prefixes: "10.10.0.0/16"
+    
+  - name: Add subnet
+    azure_rm_subnet:
+     resource_group: ResourceGroupName
+      name: subnet001
+      address_prefix: "10.10.0.0/24"
+      virtual_network: testvn001
+
+  - name: Create public ip
+    azure_rm_publicipaddress:
+      resource_group: ResourceGroupName
+      allocation_method: Static
+      name: publicip001
+
+  - name: Create security group that allows SSH
+    azure_rm_securitygroup:
+      resource_group: ResourceGroupName
+      name: secgroup001
+      rules:
+        - name: SSH
+          protocol: Tcp
+          destination_port_range: 22
+          access: Allow
+          priority: 101
+          direction: Inbound
+
+  - name: Create NIC
+    azure_rm_networkinterface:
+      resource_group: ResourceGroupName
+      name: testnic001
+      virtual_network: testvn001
+      subnet: subnet001
+      public_ip_name: publicip001
+      security_group: secgroup001
+
   - name: Create a VitualMachine
     azure_rm_virtualmachine:
           admin_username: "mike1"
@@ -12,6 +52,9 @@
           name: testVM
           vm_size: Standard_D1
           ssh_password_enabled: yes
+          subnet_name: subnet001
+          virtual_network_name: testvn001
+          network_interface_names: testnic001
           image:
               offer: CentOS
               publisher: OpenLogic

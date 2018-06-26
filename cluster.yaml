@@ -10,7 +10,7 @@
           deployment_name: openshift-cluster-deployment
           deployment_mode: complete
           resource_group_name: ResourceGroupName
-          parametes: azuredeploy.paramteres.mike.json
+          parameters: azuredeploy.paramteres.mike.json
           template: azuredeploy.mike.json
           wait_for_deployment_completion: no
           

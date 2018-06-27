@@ -21,7 +21,6 @@
     
   - name: Create Openshift Deployment
     shell: |
-       sudo -i
        cd /tmp/azure-Openshift-deploy/
-       az group deployment create --name ocpdeployment --template-file azuredeploy.mike.json --parameters azuredeploy.paramteres.mike1.json --resource-group ResourceGroupName
+       sudo az group deployment create --name ocpdeployment --template-file azuredeploy.mike.json --parameters azuredeploy.paramteres.mike1.json --resource-group ResourceGroupName
           

@@ -1,7 +1,7 @@
 ---
 - hosts: localhost
-  gather_facts: False
-  become_user: root
+  gather_facts: yes
+  become_method: sudo
   
   
   vars:
@@ -11,9 +11,9 @@
  
   tasks:
   - name: git hub download
-    shell: |
-      cd /tmp/
-      git clone https://github.com/Michaelsliem/azure-Openshift-deploy.git
+    git:
+      repo: 'https://github.com/Michaelsliem/azure-Openshift-deploy.git'
+      dest: /tmp/azure-Openshift-deploy/
   
   - template:
         src: /tmp/azure-Openshift-deploy/azuredeploy.paramteres.mike.json
@@ -21,7 +21,7 @@
     
   - name: Create Openshift Deployment
     shell: |
+       sudo -i
        cd /tmp/azure-Openshift-deploy/
-       az login
        az group deployment create --name ocpdeployment --template-file azuredeploy.mike.json --parameters azuredeploy.paramteres.mike1.json --resource-group ResourceGroupName
           

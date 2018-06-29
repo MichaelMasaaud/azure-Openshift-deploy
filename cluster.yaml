@@ -14,5 +14,5 @@
     
   - name:
     shell:
-       sudo az group deployment create --name ocptestdeployment --template-file /var/lib/awx/download/azuredeploy.mike.json --parameters /var/lib/awx/download/azuredeploy.paramteres.mike.json --resource-group ResourceGroupName
+       sudo az group deployment create --name ocpclutserdeploy --template-file /var/lib/awx/download/azuredeploy.mike.json --parameters /var/lib/awx/download/azuredeploy.paramteres.mike.json --resource-group ResourceGroupName
           

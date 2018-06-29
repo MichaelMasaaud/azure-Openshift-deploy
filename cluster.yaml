@@ -18,5 +18,7 @@
       force: yes
       version: master
     
-  - shell: sudo az group deployment create --name ocptestdeployment --template-file /var/lib/awx/azure-Openshift-deploy/azuredeploy.mike.json --parameters /var/lib/awx/azure-Openshift-deploy/azuredeploy.paramteres.mike.json --resource-group ResourceGroupName
+  - name:
+    shell:  | 
+       sudo az group deployment create --name ocptestdeployment --template-file /var/lib/awx/download/azuredeploy.mike.json --parameters /var/lib/awx/download/azuredeploy.paramteres.mike.json --resource-group ResourceGroupName
           

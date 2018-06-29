@@ -23,7 +23,5 @@
         dest: /var/lib/awx/download/azuredeploy.paramteres.mike1.json
     
   - name: Create Openshift Deployment
-    shell: |
-       cd /var/lib/awx/download
-       sudo az group deployment create --name ocpdeployment --template-file azuredeploy.mike.json --parameters azuredeploy.paramteres.mike1.json --resource-group ResourceGroupName
+    shell: sudo az group deployment create --name ocpdeployment --template-file /var/lib/awx/download/azuredeploy.mike.json --parameters /var/lib/awx/download/azuredeploy.paramteres.mike1.json --resource-group ResourceGroupName
           
